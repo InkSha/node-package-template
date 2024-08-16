@@ -1,0 +1,13 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "./src/**"
+  ],
+  "exclude": [
+    "./src/__test__/**"
+  ],
+  "out": "./docs",
+  "basePath": "./src",
+  "searchInComments": true,
+  "searchInDocuments": true
+}

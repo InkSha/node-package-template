@@ -1,0 +1,90 @@
+{
+  "name": "package-template",
+  "description": "Node Package Template",
+  "author": {
+    "name": "InkSha",
+    "email": "inksha@inksha.com"
+  },
+  "license": "MIT",
+  "main": "dist/index.min.js",
+  "module": "dist/index.min.mjs",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InkSha/node-package-template"
+  },
+  "bugs": {
+    "email": "inksha@inksha.com",
+    "url": "https://github.com/InkSha/node-package-template/issues"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/index.min.mjs",
+      "import": "./dist/index.min.mjs",
+      "require": "./dist/index.min.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc && cross-env NODE_ENV=development node ./dist/index.js",
+    "build": "typedoc --plugin typedoc-plugin-markdown && rollup -c rollup.config.ts --configPlugin typescript",
+    "prepare": "husky",
+    "test": "jest",
+    "tsc": "tsc",
+    "lint": "eslint --fix",
+    "format": "prettier --config .prettierrc.mjs --write",
+    "doc:md": "typedoc --plugin typedoc-plugin-markdown",
+    "doc:html": "typedoc",
+    "semantic-release": "semantic-release",
+    "semantic-release:local": "semantic-release --no-ci"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.9.0",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@semantic-release/git": "^10.0.1",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.3.0",
+    "esbuild": "^0.23.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-tsdoc": "^0.3.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.4",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "rollup": "^4.20.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "semantic-release": "^24.0.0",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.26.5",
+    "typedoc-plugin-markdown": "^4.2.4",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.1.0"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "dotenv-expand": "^11.0.6",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  }
+}
